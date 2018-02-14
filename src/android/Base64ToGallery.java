@@ -90,7 +90,7 @@ public class Base64ToGallery extends CordovaPlugin {
 
       int check = deviceVersion.compareTo("2.3.3");
 
-      File folder;
+     
 
       /*
        * File path = Environment.getExternalStoragePublicDirectory(
@@ -98,6 +98,7 @@ public class Base64ToGallery extends CordovaPlugin {
        * 2.2
        */
       /*
+       File folder;
       if (check >= 1) {
         folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
@@ -108,11 +109,12 @@ public class Base64ToGallery extends CordovaPlugin {
       } else {
         folder = Environment.getExternalStorageDirectory();
       }
+      folder = Context.getExternalFilesDir();
       */
       
-      folder = Context.getExternalFilesDir();
+      
 
-      File imageFile = new File(folder, prefix + date + ".png");
+      File imageFile = new File(context.getExternalFilesDir(), prefix + date + ".png");
 
       FileOutputStream out = new FileOutputStream(imageFile);
       bmp.compress(Bitmap.CompressFormat.PNG, 100, out);
