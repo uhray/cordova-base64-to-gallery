@@ -96,6 +96,7 @@ public class Base64ToGallery extends CordovaPlugin {
        * Environment.DIRECTORY_PICTURES ); //this throws error in Android
        * 2.2
        */
+      /*
       if (check >= 1) {
         folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
@@ -106,6 +107,9 @@ public class Base64ToGallery extends CordovaPlugin {
       } else {
         folder = Environment.getExternalStorageDirectory();
       }
+      */
+      
+      folder = Environment.getExternalFilesDir();
 
       File imageFile = new File(folder, prefix + date + ".png");
 
