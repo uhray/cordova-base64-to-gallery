@@ -15,6 +15,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
+import android.content.Context;
 import android.os.Environment;
 import android.util.Base64;
 import android.util.Log;
@@ -109,7 +110,7 @@ public class Base64ToGallery extends CordovaPlugin {
       }
       */
       
-      folder = Environment.getExternalFilesDir();
+      folder = Context.getExternalFilesDir();
 
       File imageFile = new File(folder, prefix + date + ".png");
 
