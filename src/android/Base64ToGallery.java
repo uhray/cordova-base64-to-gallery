@@ -136,7 +136,7 @@ public class Base64ToGallery extends CordovaPlugin {
    */
   private void scanPhoto(File imageFile) {
     Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-    Uri contentUri         = Uri.fromFile(imageFile);
+    Uri contentUri         = imageFile.getAbsolutePath();
 
     mediaScanIntent.setData(contentUri);
 
