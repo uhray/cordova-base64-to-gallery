@@ -140,6 +140,7 @@ public class Base64ToGallery extends CordovaPlugin {
 
     mediaScanIntent.setData(contentUri);
 
-    cordova.getActivity().sendBroadcast(mediaScanIntent);
+    Context context = this.cordova.getActivity().getApplicationContext();
+    context.sendBroadcast(mediaScanIntent);
   }
 }
