@@ -114,7 +114,8 @@ public class Base64ToGallery extends CordovaPlugin {
       
       
       Context context = this.cordova.getActivity().getApplicationContext(); 
-      File imageFile = new File(context.getExternalMediaDirs(), prefix + date + ".png");
+      File dir = new File(context.getExternalMediaDirs());
+      File imageFile = new File(dir, prefix + date + ".png");
 
       FileOutputStream out = new FileOutputStream(imageFile);
       bmp.compress(Bitmap.CompressFormat.PNG, 100, out);
